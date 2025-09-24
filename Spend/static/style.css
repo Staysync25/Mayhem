@@ -1,0 +1,30 @@
+
+body { 
+  font-family: Inter, Arial, sans-serif; 
+  background-color: #F9F9F9;
+  color: #1F1F1F;
+}
+h1 { color: #1F1F1F; }
+h2, h3, h4, h5, h6 { color: #1F1F1F; }
+.text-muted { color: #5C5C5C; }
+.btn-success { 
+  background-color: #3BB273; 
+  border-color: #3BB273; 
+  color: white;
+}
+.btn-success:hover {
+  background-color: #32A066;
+  border-color: #32A066;
+}
+.card {
+  background-color: white;
+  border: 1px solid #E5E5E5;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.progress-bar {
+  background-color: #3BB273;
+}
+.progress-bg {
+  background-color: #E5E5E5;
+}

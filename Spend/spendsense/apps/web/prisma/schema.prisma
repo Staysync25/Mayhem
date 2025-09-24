@@ -1,0 +1,54 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  createdAt    DateTime @default(now())
+  submissions  Submission[]
+  stripeCusId  String?
+}
+
+model Submission {
+  id                 String   @id @default(cuid())
+  userId             String
+  createdAt          DateTime @default(now())
+  businessName       String
+  website            String?
+  locationsCount     Int?
+  cuisineType        String?
+  address            String?
+  contactName        String
+  phone              String
+  monthlySpend       Decimal  @db.Decimal(12,2)
+  monthlySales       Decimal? @db.Decimal(12,2)
+  foodCostPct        Decimal? @db.Decimal(5,2)
+  inventoryFrequency String   // Weekly | Biweekly | Monthly | Inconsistent
+  inventoryMethod    String?  // By area | By category | Recipe-level | Other
+  systemsUsed        String
+  vendors            String
+  primeVendorPct     Int?
+  goals              String?
+  planTier           Int      // 1..3
+  status             String   // submitted | paid | in_review | complete
+  files              File[]
+  user               User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model File {
+  id            String   @id @default(cuid())
+  submissionId  String
+  filename      String
+  storagePath   String   // Supabase storage key
+  uploadedAt    DateTime @default(now())
+  submission    Submission @relation(fields: [submissionId], references: [id], onDelete: Cascade)
+}

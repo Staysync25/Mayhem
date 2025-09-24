@@ -1,0 +1,57 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SpendSense</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
+</head>
+<body class="bg-light">
+  <div class="container py-5">
+    <div class="text-center mb-4">
+      <img src="{{ url_for('static', filename='logo.png') }}" alt="SpendSense Logo" style="max-height:80px;">
+      <h1 class="h3 mt-3">Mayhem Metrics</h1>
+      <p class="lead text-muted">Turn chaos into clarity.</p>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="card shadow-sm">
+          <div class="card-body p-4 p-md-5">
+            <h5 class="mb-3">Get Your Checkup</h5>
+            <div class="text-center mb-4">
+              <a href="{{ url_for('onboarding') }}" class="btn btn-success btn-lg">Start Free Checkup</a>
+            </div>
+            <hr class="my-4">
+            <h6 class="text-muted">Or use the quick form below:</h6>
+            <form action="{{ url_for('submit') }}" method="post" enctype="multipart/form-data">
+              <label class="form-label">Business Name</label>
+              <input type="text" name="business_name" class="form-control mb-3" required>
+              <label class="form-label">Contact Name</label>
+              <input type="text" name="contact_name" class="form-control mb-3" required>
+              <label class="form-label">Email</label>
+              <input type="email" name="email" class="form-control mb-3" required>
+              <label class="form-label">Phone</label>
+              <input type="text" name="phone" class="form-control mb-3" required>
+              <label class="form-label">Vendors</label>
+              <textarea name="vendors" class="form-control mb-3" rows="2"></textarea>
+              <label class="form-label">Monthly Spend ($)</label>
+              <input type="number" name="monthly_spend" class="form-control mb-3" required>
+              <label class="form-label">Current Food Cost %</label>
+              <input type="number" step="0.1" name="food_cost_pct" class="form-control mb-3">
+              <label class="form-label">Systems Used</label>
+              <input type="text" name="systems_used" class="form-control mb-3">
+              <label class="form-label">Upload Files</label>
+              <input type="file" name="files" class="form-control mb-3" multiple>
+              <div class="d-grid">
+                <button class="btn btn-success btn-lg" type="submit">Submit</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
