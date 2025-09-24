@@ -19,12 +19,20 @@ export default function MarketingPage() {
               />
               <span className="text-xl font-bold text-primary">SpendSense</span>
             </div>
-            <Link
-              href="/onboarding"
-              className="btn-primary"
-            >
-              Start Free Checkup
-            </Link>
+            <div className="flex items-center gap-4">
+              <Link
+                href="/assessment"
+                className="text-primary hover:text-primary/80 font-medium"
+              >
+                Take Assessment
+              </Link>
+              <Link
+                href="/onboarding"
+                className="btn-primary"
+              >
+                Start Free Checkup
+              </Link>
+            </div>
           </div>
         </div>
       </nav>
@@ -47,13 +55,22 @@ export default function MarketingPage() {
               Get a comprehensive audit of your food costs, vendor pricing, and inventory management. 
               Discover savings opportunities that can reduce your food costs by 15-25%.
             </p>
-            <Link
-              href="/onboarding"
-              className="btn-primary text-lg px-8 py-4 inline-flex items-center gap-2"
-            >
-              Start your free checkup
-              <ArrowRight className="h-5 w-5" />
-            </Link>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link
+                href="/assessment"
+                className="btn-secondary text-lg px-8 py-4 inline-flex items-center gap-2"
+              >
+                Take Free Assessment
+                <ArrowRight className="h-5 w-5" />
+              </Link>
+              <Link
+                href="/onboarding"
+                className="btn-primary text-lg px-8 py-4 inline-flex items-center gap-2"
+              >
+                Start Full Checkup
+                <ArrowRight className="h-5 w-5" />
+              </Link>
+            </div>
           </div>
         </div>
       </section>
@@ -165,6 +182,31 @@ export default function MarketingPage() {
         </div>
       </section>
 
+      {/* Assessment Highlight */}
+      <section className="py-16">
+        <div className="container mx-auto px-4">
+          <div className="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl p-12 text-white text-center">
+            <h2 className="text-3xl font-bold mb-4">
+              Not sure where to start? Take our free assessment
+            </h2>
+            <p className="text-xl mb-8 max-w-2xl mx-auto opacity-90">
+              Get a personalized optimization score and recommendations in just 2 minutes. 
+              Discover your biggest opportunities for cost savings without any commitment.
+            </p>
+            <Link
+              href="/assessment"
+              className="bg-white text-blue-600 hover:bg-gray-100 text-lg px-8 py-4 rounded-xl inline-flex items-center gap-2 transition-colors font-semibold"
+            >
+              Take Free Assessment
+              <ArrowRight className="h-5 w-5" />
+            </Link>
+            <p className="text-sm mt-4 opacity-75">
+              2 minutes • No commitment • Instant results
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* FAQ */}
       <section className="py-16 bg-muted/30">
         <div className="container mx-auto px-4">
@@ -211,13 +253,22 @@ export default function MarketingPage() {
           <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
             Join hundreds of restaurants that have already discovered significant savings opportunities
           </p>
-          <Link
-            href="/onboarding"
-            className="btn-primary text-lg px-8 py-4 inline-flex items-center gap-2"
-          >
-            Start your free checkup
-            <ArrowRight className="h-5 w-5" />
-          </Link>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              href="/assessment"
+              className="btn-secondary text-lg px-8 py-4 inline-flex items-center gap-2"
+            >
+              Take Free Assessment
+              <ArrowRight className="h-5 w-5" />
+            </Link>
+            <Link
+              href="/onboarding"
+              className="btn-primary text-lg px-8 py-4 inline-flex items-center gap-2"
+            >
+              Start Full Checkup
+              <ArrowRight className="h-5 w-5" />
+            </Link>
+          </div>
         </div>
       </section>
 
